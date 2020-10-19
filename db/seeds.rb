@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+CS.states(:us).each do |key, value|
+    State.create(name:"#{key} - #{value}")  
+end 
