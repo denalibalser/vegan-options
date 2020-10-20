@@ -1,0 +1,11 @@
+<ul>
+<%= @restaurants.each do |restaurant| %>
+    <% if restaurant.state_id == restaurant.state.id %>  
+        <li><%= restaurant.name %></li> 
+    <% end %>
+<% end %> 
+ 
+</ul>
+
+
+!!! need to work on this one 
