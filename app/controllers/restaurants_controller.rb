@@ -9,12 +9,14 @@ class RestaurantsController < ApplicationController
         redirect_to restaurant_path(@restaurant)
     end 
 
-    def show  
+    def show 
+        @restaurant = Restaurant.find_by(id: params[:id]) 
     end 
 
     private  
 
-    def restaurant_params  
+    def restaurant_params
+        params.require(:restaurant).permit(:name, :description, :address, :phone_number, :vegan_friendliness_rating, :price_rating)  
     end 
     
 end
