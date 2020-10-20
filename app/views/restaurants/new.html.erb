@@ -38,7 +38,7 @@
     </div>
 
     <br>
-      <%= f.label :state_id, "In which state is this restaurant located?" %>
+      <%= f.label :state_id, "In which state is this restaurant located?" %>  <%# want default value of drop-down menu to be blank, ie not the name of the first state %>
       <br>
       <%= f.collection_select(:state_id, State.all, :id, :name) %>
     <br>
