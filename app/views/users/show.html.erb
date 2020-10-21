@@ -1,7 +1,7 @@
 <%= @user.username %>
 <br> 
 <br>
-<%=  link_to 'Create Restaurant', new_restaurant_path %>
+<%=  link_to 'Create Restaurant', restaurants_new_path %>
 <br> 
 <br>
 <%= link_to 'List of States', states_path %>
@@ -10,3 +10,5 @@
 <%= link_to 'Logout', logout_path %>
 
 <%# want to remove links and have them in the layouts header %>
+
+<%# changed new_restaurant_path to new_state_restaurant on line 4 %>

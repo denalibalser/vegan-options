@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#home'
   resources :states do 
-    resources :restaurants #also maybe edit and update
+    resources :restaurants, except: [:new, :create] #also maybe edit and update
   end
   resources :reviews
   resources :users

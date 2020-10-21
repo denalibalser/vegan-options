@@ -3,8 +3,7 @@ class RestaurantsController < ApplicationController
 
     require 'pry'
     def new 
-        #@restaurant = Restaurant.new 
-        @restaurant = @state.restaurants.build
+        @restaurant = Restaurant.new 
     end 
 
     def create 
@@ -29,7 +28,7 @@ class RestaurantsController < ApplicationController
     private 
     
     def get_state
-        @state = State.find(params[:state_id])
+        @state = State.find_by(id: params[:id])
     end
 
     def restaurant_params
