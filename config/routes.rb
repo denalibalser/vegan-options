@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   root 'welcome#home'
   resources :states do 
-    resources :restaurants, except: [:new, :create] #also maybe edit and update
+    resources :restaurants, only: [:index] #also maybe edit and update
   end
   resources :reviews
   resources :users
 
   get 'restaurants/new' => 'restaurants#new'
-  post 'restaurants/create' => 'restaurants#create'
+  post 'restaurants' => 'restaurants#create'
+  get 'restaurants/:id' => 'restaurants#show', as: 'restaurant'
   
   get '/signup' => 'users#new'
 
@@ -18,6 +19,6 @@ Rails.application.routes.draw do
 
   get '/states' => 'states#index'
 
-  #get '/states/:id/restaurants' => 'restaurants#index'
+  
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

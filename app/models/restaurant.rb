@@ -4,7 +4,7 @@ class Restaurant < ApplicationRecord
   has_many :reviews, dependent: :destroy 
   has_many :users, through: :reviews
 
-  validates_presence_of :state_id 
+  #validates_presence_of :state_id 
    
 
 end

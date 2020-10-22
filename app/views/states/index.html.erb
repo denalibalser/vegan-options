@@ -1,5 +1,5 @@
 <ul>
 <%= @states.each do |state| %>
-    <li><%= link_to state.name, state_restaurants_path(state.restaurants) %> - <%= state.restaurants.count %> Restaurants </li>
+    <li><%= link_to state.name, state_restaurants_path(state) %> - <%= state.restaurants.count %> Restaurants </li>
 <% end %>
 </ul>
