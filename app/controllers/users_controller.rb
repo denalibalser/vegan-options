@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
     before_action :authorized, except: [:new, :create]
-    
+
     def new 
         @user = User.new
+        render :layout => "welcome"
     end
 
     def create 

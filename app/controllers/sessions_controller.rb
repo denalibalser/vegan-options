@@ -1,7 +1,8 @@
 class SessionsController < ApplicationController
     before_action :authorized, except: [:new, :create]
-    
+
     def new
+        render :layout => "welcome"
     end 
 
     def create

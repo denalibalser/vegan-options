@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
 
   get '/logout' => 'sessions#destroy'
+  post '/logout' => 'sessions#destroy'
 
   get '/states' => 'states#index'
 

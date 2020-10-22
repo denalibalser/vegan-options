@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
     helper_method :current_user
     helper_method :logged_in?
-    #helper_method :state_restaurant
+
 
     def current_user
         if session[:user_id]
@@ -20,14 +20,5 @@ class ApplicationController < ActionController::Base
           redirect_to root_path
         end
     end
-
-    # def state_restaurant(restaurant) 
-    #     @restaurant = Restaurant.find_by(state_id: [:restaurant][:state_id]) 
-    #     if @restaurant == nil 
-    #         puts 'No restaurant submissions'
-    #     elsif restaurant.state.id == @restaurant
-    #             restaurant.name 
-    #     end 
-    # end
  
 end

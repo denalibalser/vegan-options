@@ -5,12 +5,10 @@ class RestaurantsController < ApplicationController
     require 'pry'
     def new 
         @restaurant = Restaurant.new 
-        #@restaurant = @state.restaurant.build
     end 
 
     def create 
         @restaurant = Restaurant.new(restaurant_params)
-        #@restaurant = @state.restaurant.build(restaurant_params)
         @restaurant.user_id = current_user.id  #may need to work on this --- but is working now i think
 
         @restaurant.save
