@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = current_user
+        @restaurant = Restaurant.find_by(id: params[:id])
         #@user = User.find_by(id: params[:id])
     end 
 

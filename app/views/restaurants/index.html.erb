@@ -1,11 +1,13 @@
-<ul>
-<%= @restaurants.each do |restaurant| %>
-    <% if restaurant.state_id == restaurant.state.id %>  
-        <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li> 
-    <% end %>
-<% end %> 
- 
-</ul>
-
-
-<%# !!! need to work on this one -- if there  are not restaurants for that state, say no restaurant submissions yet and link_to create new restaurant %>
+<% if @state.restaurants.any? %>
+    <h1>Restaurant's in <%= @state.name %> </h1>
+    <ul>
+    <%= @restaurants.each do |restaurant| %>
+        <% if restaurant.state_id == restaurant.state.id %>  
+            <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li> 
+        <% end %>
+    <% end %> 
+    </ul>
+<% else %> 
+        <h2>No Restaurant Submissions for <%=@state.name%></h2>
+        <%= link_to 'Create Restaurant', new_restaurant_path %>
+<% end %>

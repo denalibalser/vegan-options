@@ -9,8 +9,7 @@ class RestaurantsController < ApplicationController
 
     def create 
         @restaurant = Restaurant.new(restaurant_params)
-        @restaurant.user_id = current_user.id  #may need to work on this --- but is working now i think
-
+        @restaurant.user_id = current_user.id  
         @restaurant.save
 
         redirect_to restaurant_path(@restaurant)

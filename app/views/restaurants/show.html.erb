@@ -7,14 +7,13 @@
 <p>Price Rating: <%= @restaurant.price_rating %></p>
 
 
-<% if @restaurant.user_id == current_user.id %> <%# !!! NOT WORKING !!! %>
+<% if @restaurant.user_id == current_user.id %> 
     <p><%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %></p>
 <% end %>
 <br> 
 <br> 
 <%= link_to 'My Profile', user_path(current_user) %>
 
-<%# if @restaurant.user_id == current_user.id, then display option to edit or delete restaurant ---- why is this not working above?? %>
 <%# for some reason the relationship between User and Restaurant isn't direct, it is reading the has_many_through relationship with inner join on Reviews %>
 
 <h3>Reviews (<%= @restaurant.reviews.size %>):</h3> 

@@ -2,7 +2,7 @@
 <p>Username: <%=@user.username %></p>
 <p>Email: <%= @user.email %></p>
 
-<% if @user.restaurants.any? %>
+<% if @user.id == @restaurant.user_id %>   <%# seems to only work when user has submitted review on the restaurant %>
 <h3> Your Restaurant Submissions: </h3>
     <ul>
     <%= @user.restaurants.each do |restaurant| %>
