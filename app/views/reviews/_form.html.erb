@@ -1,0 +1,13 @@
+<h3>Post a Review, <%= @restaurant.user.username %>:</h3>
+
+<%= form_for [ @restaurant, @review ] do |f| %>
+
+    <p>
+      <%= f.text_area :body %>
+    </p>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>

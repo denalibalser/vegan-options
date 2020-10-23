@@ -18,18 +18,38 @@ class RestaurantsController < ApplicationController
 
     def show 
         @restaurant = Restaurant.find_by(id: params[:id]) 
+        @reviews = @restaurant.reviews.all
+        @review = Review.new
+        @review.restaurant_id = @restaurant.id
+        @review.user_id = current_user.id
     end 
 
     def index 
-        #@restaurants = Restaurant.all
         @restaurants = @state.restaurants
+    end
+    
+    def edit
+        @restaurant = Restaurant.find_by(id: params[:id]) 
     end 
+    
+    def update 
+        @restaurant.find_by(id: params[:id])
+        @restaurant.update(restaurant_params)
 
+        redirect_to restaurant_path(@restaurant)
+    end 
+    
+    def destroy 
+        @restaurant.find_by(id: params[:id])
+        @restaurant.destroy
+
+        redirect_to states_path
+    end 
+#replace @restaurant.find_by(id: params[:id]) with private method that does the same
 
     private 
     
     def get_state
-         #@restaurant = Restaurant.find_by(id: params[:id])
          @state = State.find(params[:state_id])
     end
      

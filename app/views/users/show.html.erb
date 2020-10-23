@@ -1,6 +1,9 @@
-<h3><%= @user.username %></h3>
+<h1>Welcome, <%= @user.first_name %>!</h1>
+<p>Username: <%=@user.username %></p>
+<p>Email: <%= @user.email %></p>
 
 <% if @user.restaurants.any? %>
+<h3> Your Restaurant Submissions: </h3>
     <ul>
     <%= @user.restaurants.each do |restaurant| %>
         <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>

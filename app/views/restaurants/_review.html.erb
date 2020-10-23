@@ -1,0 +1,13 @@
+<div>
+  <h4>Posted by: <%= current_user.username %></h4>
+  <p class="review"><%= review.body %></p>
+</div>
+<p>
+  Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %>
+</p>
+
+
+
+<%# perhaps have review be a link_to the specific reivews show page and that will house the edit and delete options %>
+<%# need to confirm that current_user.id == review.user_id in order to allow delete option%>
+<%# <p>link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }</p> %>
