@@ -11,14 +11,15 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save
             session[:user_id] = @user.id
-            redirect_to user_path(@user)
+            redirect_to user_path(current_user) #changed this from user_path(@user)
         else 
             redirect_to root_path
         end
     end 
 
     def show 
-        @user = User.find_by(id: params[:id])
+        @user = current_user
+        #@user = User.find_by(id: params[:id])
     end 
 
     private 

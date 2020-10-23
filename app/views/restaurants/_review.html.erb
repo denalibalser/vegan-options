@@ -1,10 +1,11 @@
 <div>
-  <h4>Posted by: <%= current_user.username %></h4>
+  <h4>Posted by: <%= review.user.username %></h4>
   <p class="review"><%= review.body %></p>
 </div>
 <p>
   Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %>
 </p>
+
 
 
 

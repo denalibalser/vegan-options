@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-    require 'pry'
+    before_action :authorized
+    
     def create
         @review = Review.new(review_params)
         @review.restaurant_id = params[:review][:restaurant_id]
