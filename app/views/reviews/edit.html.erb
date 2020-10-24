@@ -1,0 +1,15 @@
+<h3>Editing Your Review, <%= current_user.username %>:</h3>
+
+<%= form_for [ @restaurant, @review ] do |f| %>
+
+    <p>
+      <%= f.text_area :body %>
+    </p>
+    <p>
+      <%= f.submit 'Submit' %>
+    </p>
+<% end %>
+
+<%= link_to "Delete Review", restaurant_review_path(@restaurant, @review), data: {:confirm => 'Are you sure?'}, :method => :delete %>
+
+

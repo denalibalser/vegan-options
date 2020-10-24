@@ -1,3 +1,4 @@
+
 <div>
   <h4>Posted by: <%= review.user.username %></h4>
   <p class="review"><%= review.body %></p>
@@ -5,10 +6,10 @@
 <p>
   Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %>
 </p>
+<% if review.user.id == current_user.id %> 
+  <%= link_to "Edit Your Review", edit_restaurant_review_path(@restaurant, review) %>  <%# changed @restaurant, review from review %>
+<% end %>
 
 
 
 
-<%# perhaps have review be a link_to the specific reivews show page and that will house the edit and delete options %>
-<%# need to confirm that current_user.id == review.user_id in order to allow delete option%>
-<%# <p>link_to 'Delete', comment_path(comment), method: :delete, data: { confirm: 'Are you sure?' }</p> %>

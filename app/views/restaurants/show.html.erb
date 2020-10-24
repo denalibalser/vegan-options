@@ -19,4 +19,4 @@
 <h3>Reviews (<%= @restaurant.reviews.size %>):</h3> 
 <%= render partial: 'restaurants/review', collection: @restaurant.reviews.reverse %>
 
-<%= render partial: 'reviews/form', locals: { reivew: @review } %>
+<%= render partial: 'reviews/form', locals: { review: @review } %>

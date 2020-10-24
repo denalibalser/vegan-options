@@ -18,6 +18,7 @@ class RestaurantsController < ApplicationController
     def show 
         @reviews = @restaurant.reviews.all
         @review = Review.new
+        #@review = @restaurant.reviews.build
         @review.restaurant_id = @restaurant.id
         @review.user_id = current_user.id
     end 
