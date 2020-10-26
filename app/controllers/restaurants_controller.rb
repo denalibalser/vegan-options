@@ -8,17 +8,18 @@ class RestaurantsController < ApplicationController
     end 
 
     def create 
+        #need to validate and display errors
         @restaurant = Restaurant.new(restaurant_params)
+
         @restaurant.user_id = current_user.id  
         @restaurant.save
 
-        redirect_to restaurant_path(@restaurant)
+        redirect_to restaurant_path(@restaurant) 
     end 
 
     def show 
         @reviews = @restaurant.reviews.all
         @review = Review.new
-        #@review = @restaurant.reviews.build
         @review.restaurant_id = @restaurant.id
         @review.user_id = current_user.id
     end 
