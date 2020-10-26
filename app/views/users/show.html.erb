@@ -2,6 +2,7 @@
 <p>Username: <%=@user.username %></p>
 <p>Email: <%= @user.email %></p>
 
+<%# THIS FEATURE NOT WORKING %>
 <% if @user.id == @restaurant.user_id %>   <%# seems to only work when user has submitted review on the restaurant %>
 <h3> Your Restaurant Submissions: </h3>
     <ul>
