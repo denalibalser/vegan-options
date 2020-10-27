@@ -7,7 +7,6 @@ class User < ApplicationRecord
     validates :username, :first_name, :last_name, :email, presence: true
     validates_uniqueness_of :username
     validates_format_of :email,:with => /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/  
-    #validation for password presence --- do we  need this with has_secure_password? 
 
 
 end

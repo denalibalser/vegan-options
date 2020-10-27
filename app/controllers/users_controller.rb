@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = current_user
-        @restaurant = Restaurant.find_by(id: params[:id])
+        @restaurant = Restaurant.find_by(id: params[:id]) #maybe find_by(:user_id)?
     end 
 
     private 

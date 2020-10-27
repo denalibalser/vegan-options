@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   root 'welcome#home'
   resources :states do 
-    resources :restaurants, only: [:index] #also maybe edit and update
+    resources :restaurants, only: [:index] #should restaurants#show & edit/update be nested as well?
   end
   resources :users
   resources :restaurants do 
     resources :reviews
   end 
 
-  get 'restaurants/new' => 'restaurants#new'
-  post 'restaurants' => 'restaurants#create'
+  #get 'restaurants/new' => 'restaurants#new'
+  #post 'restaurants' => 'restaurants#create'
   #get 'restaurants/:id' => 'restaurants#show', as: 'restaurant'
   #get 'restaurants/:id/edit' => 'restaurants#edit', as: 'edit_restaurant'
   post 'restaurants/:id' => 'restaurants#update'

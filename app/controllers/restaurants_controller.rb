@@ -8,13 +8,16 @@ class RestaurantsController < ApplicationController
     end 
 
     def create 
-        #need to validate and display errors
         @restaurant = Restaurant.new(restaurant_params)
+        @restaurant.user_id = current_user.id
+        if @restaurant.valid? 
 
-        @restaurant.user_id = current_user.id  
-        @restaurant.save
-
-        redirect_to restaurant_path(@restaurant) 
+            @restaurant.save
+            redirect_to restaurant_path(@restaurant)
+        else 
+            #why does browser URL direct  to '/restaurants' when errors are present?
+            render 'new'
+        end 
     end 
 
     def show 

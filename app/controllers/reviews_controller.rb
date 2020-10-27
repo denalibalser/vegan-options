@@ -2,6 +2,7 @@ class ReviewsController < ApplicationController
     before_action :authorized
     
     def create
+        #need to validate and display errors
         @review = Review.new(review_params)
     
         @review.save
