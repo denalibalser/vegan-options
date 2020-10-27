@@ -11,7 +11,7 @@ class UsersController < ApplicationController
         if @user.valid?
             @user.save
             session[:user_id] = @user.id
-            redirect_to user_path(current_user) #changed this from user_path(@user)
+            redirect_to user_path(current_user) 
         else 
             redirect_to root_path
         end
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
     def show 
         @user = current_user
-        @restaurant = Restaurant.find_by(id: params[:id]) #maybe find_by(:user_id)?
+        @restaurant = Restaurant.find_by(id: params[:id]) #not working
     end 
 
     private 

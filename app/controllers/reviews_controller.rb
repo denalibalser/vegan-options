@@ -4,12 +4,14 @@ class ReviewsController < ApplicationController
     def create
         #need to validate and display errors
         @review = Review.new(review_params)
-    
-        @review.save
+        if @review.valid? 
+            @review.save
       
-        redirect_to restaurant_path(@review.restaurant)
-
-      end
+            redirect_to restaurant_path(@review.restaurant)
+        else 
+            render '_form'
+        end 
+    end
 
       def edit
         @review = Review.find_by(id: params[:id]) 

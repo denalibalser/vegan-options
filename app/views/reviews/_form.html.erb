@@ -1,4 +1,7 @@
-<% if @restaurant.id == review.restaurant_id %>
+<% if @review.errors.any? %>
+    <%= render partial: 'error', locals: { review: @review } %>
+
+<% elsif @restaurant.id == review.restaurant_id %>
 
 <h3>Post a Review, <%= current_user.username %>:</h3>
 

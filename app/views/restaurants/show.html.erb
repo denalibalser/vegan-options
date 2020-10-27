@@ -12,9 +12,6 @@
 <% end %>
 <br> 
 <br> 
-<%= link_to 'My Profile', user_path(current_user) %>
-
-<%# for some reason the relationship between User and Restaurant isn't direct, it is reading the has_many_through relationship with inner join on Reviews %>
 
 <h3>Reviews (<%= @restaurant.reviews.size %>):</h3> 
 <%= render partial: 'restaurants/review', collection: @restaurant.reviews.reverse %>
