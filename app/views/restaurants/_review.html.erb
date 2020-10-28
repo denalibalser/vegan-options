@@ -7,9 +7,9 @@
   Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %>
 </p>
 <% if review.user.id == current_user.id %> 
-  <%= link_to "Edit Your Review", edit_restaurant_review_path(@restaurant, review) %>  <%# changed @restaurant, review from review %>
+  <%= link_to "Edit Your Review", edit_review_path(review) %>  
 <% end %>
 
-
+<%# changed edit_restaurant_review_path(@restaurant, review) to edit_review_path(review) %>
 
 

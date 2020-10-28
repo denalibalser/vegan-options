@@ -29,7 +29,6 @@ class ReviewsController < ApplicationController
       end 
 
       def destroy 
-        @restaurant = Restaurant.find(params[:restaurant_id])
         @review = Review.find_by(id: params[:id])
         @review.destroy
 
