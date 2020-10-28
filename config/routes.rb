@@ -3,11 +3,14 @@ Rails.application.routes.draw do
   resources :states do 
     resources :restaurants, only: [:index] #should restaurants#show & edit/update be nested as well?
   end
-  resources :users
+  resources :users, only: [:new, :create, :show] #added , only: [:new, :create, :show]
   resources :restaurants do 
     resources :reviews
   end 
 
+
+  #post 'users/new' => 'users#create'   {:action=>"create", :controller=>"things"}
+  
   #get 'restaurants/new' => 'restaurants#new'
   #post 'restaurants' => 'restaurants#create'
   #get 'restaurants/:id' => 'restaurants#show', as: 'restaurant'
@@ -15,8 +18,6 @@ Rails.application.routes.draw do
   post 'restaurants/:id' => 'restaurants#update'
   get 'restaurants/:id/destroy' => 'restaurants#destroy', as: 'delete_restaurant'
   post 'restaurants/:id/destroy' => 'restaurants#destroy'
-  
-  get '/signup' => 'users#new'
 
   get '/signin' => 'sessions#new'
   post '/signin' => 'sessions#create'

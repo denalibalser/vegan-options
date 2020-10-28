@@ -3,13 +3,6 @@
 <p>Email: <%= @user.email %></p>
 
 
-<% if @restaurant.user_id == @user.id %>   
-<h3> Your Restaurant Submissions: </h3>
-    <ul>
-    <%= @user.restaurants.each do |restaurant| %>
-        <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-    <% end %> 
-    </ul>
-<% end %> 
+
  
 <%# for some reason the relationship between User and Restaurant isn't direct, it is reading the has_many_through relationship with inner join on Reviews %>

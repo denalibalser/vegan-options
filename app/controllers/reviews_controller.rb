@@ -2,7 +2,6 @@ class ReviewsController < ApplicationController
     before_action :authorized
     
     def create
-        #need to validate and display errors
         @review = Review.new(review_params)
         if @review.valid? 
             @review.save
@@ -20,9 +19,13 @@ class ReviewsController < ApplicationController
       
       def update 
         @review = Review.find_by(id: params[:id]) 
-        @review.update(review_params)
+        if @review.valid? 
+            @review.update(review_params)
 
-        redirect_to restaurant_path(@review.restaurant)
+            redirect_to restaurant_path(@review.restaurant)
+        else 
+            render 'edit'
+        end
       end 
 
       def destroy 
@@ -34,6 +37,12 @@ class ReviewsController < ApplicationController
       end 
 
       private
+
+      def get_restaurant 
+      end  
+
+      def find_review
+      end 
       
       def review_params
         params.require(:review).permit(:body, :user_id, :restaurant_id)
