@@ -32,14 +32,20 @@ class RestaurantsController < ApplicationController
     end
     
     def edit
+        
     end 
     
-    def update 
+    def update #WORKING ON THIS ONE
         @restaurant.update(restaurant_params)
+        if @restaurant.valid?
 
-        redirect_to restaurant_path(@restaurant)
+            redirect_to restaurant_path(@restaurant)
+        else 
+            render 'edit'
+        end
     end 
     
+
     def destroy 
         @restaurant.destroy
 
