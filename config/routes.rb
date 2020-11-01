@@ -30,6 +30,9 @@ Rails.application.routes.draw do
 
   get '/states' => 'states#index'
 
+  #route for OAuth facebook signing:
+  get '/auth/:provider/callback' => 'sessions#create'
+
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
