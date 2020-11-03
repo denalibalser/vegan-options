@@ -30,7 +30,7 @@ Rails.application.routes.draw do
 
   get '/states' => 'states#index'
 
-  #route for OAuth facebook signing:
+  #route for OAuth github signing:
   get '/auth/:provider/callback' => 'sessions#create'
 
   
