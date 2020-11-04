@@ -1,19 +1,22 @@
-<h1><%= @restaurant.name %></h1>
-<p><strong>Description:</strong> <%= @restaurant.description %></p>
-<p><strong>Address:</strong> <%= @restaurant.address %></p> 
-<p><strong>State:</strong> <%= @restaurant.state.name %></p>
-<p><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
-<p><strong>Vegan Friendliness Rating:</strong> <%= @restaurant.vegan_friendliness_rating %></p>
-<p><strong>Price Rating:</strong> <%= @restaurant.price_rating %></p>
-
+<div class="restaurant">
+    <h1><%= @restaurant.name %></h1>
+    <p><strong>Description:</strong> <%= @restaurant.description %></p>
+    <p><strong>Address:</strong> <%= @restaurant.address %></p> 
+    <p><strong>State:</strong> <%= @restaurant.state.name %></p>
+    <p><strong>Phone Number:</strong> <%= @restaurant.phone_number %></p>
+    <p><strong>Vegan Friendliness Rating:</strong> <%= @restaurant.vegan_friendliness_rating %></p>
+    <p><strong>Price Rating:</strong> <%= @restaurant.price_rating %></p>
+</div>
 
 <% if @restaurant.user_id == current_user.id %> 
     <p><%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %></p>
 <% end %>
-<br> 
-<br> 
+ 
+<div class="restaurant_reviews">
+    <h3>Reviews (<%= @restaurant.reviews.size %>):</h3> 
+    <%= render partial: 'restaurants/review', collection: @restaurant.reviews.reverse %>
+</div>
 
-<h3>Reviews (<%= @restaurant.reviews.size %>):</h3> 
-<%= render partial: 'restaurants/review', collection: @restaurant.reviews.reverse %>
-
-<%= render partial: 'reviews/form', locals: { review: @review } %>
+<div class="create_review">
+    <%= render partial: 'reviews/form', locals: { review: @review } %>
+</div>  

@@ -28,6 +28,19 @@ class UsersController < ApplicationController
         
     end 
 
+    def edit 
+        @user = current_user
+        render :layout => 'application'
+    end
+
+    def update 
+        @user = current_user
+        @user.update(user_params)
+
+        redirect_to user_path(current_user)
+        #render :layout => 'application'
+    end 
+
     private 
 
     def user_params 

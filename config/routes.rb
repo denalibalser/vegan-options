@@ -5,7 +5,7 @@ Rails.application.routes.draw do
       resources :reviews
     end
   end
-  resources :users, only: [:new, :create, :show] #added , only: [:new, :create, :show]
+  resources :users, only: [:new, :create, :show, :edit, :update] #added , only: [:new, :create, :show]
   # resources :restaurants do 
   #   resources :reviews
   # end 

@@ -4,7 +4,11 @@
     <p>Email: <%= @user.email %></p>
 </div>
 
-<div class="restaurants">
+<div class="edit_user">
+    <%= link_to "Edit Profile", edit_user_path(@user) %>
+</div>
+
+<div class="user_restaurants">
 <% if @restaurants != nil %>
     <ul>
     <h3> Your Restaurant Submissions: </h3> <%# need to figure out how to have this display only if user has restaurants %>

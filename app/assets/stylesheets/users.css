@@ -23,3 +23,27 @@ div.profile {
         padding-top: 70px;
         padding-bottom: 10px;
     }
+
+    div.user_restaurants {
+        height: 10em;
+        position: relative;
+        margin: 0;
+        position: absolute;
+        top: 70%;
+        left: 50%;
+        margin-right: -50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+div.edit_user {
+    height: 10em;
+    position: relative;
+    margin: 0;
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
