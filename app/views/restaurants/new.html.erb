@@ -1,6 +1,6 @@
 
 <%= form_for @restaurant do |f| %> 
-    
+
     <% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -47,7 +47,7 @@
 
 
     <div class="form-group">
-      <%= f.label :price_rating, "Price Rating (Choose a number 1-5, with 1 being less expensive and 5 being most):" %>
+      <%= f.label :price_rating, "Price Rating (Choose a number 1-5, with 1 being least expensive and 5 being most):" %>
       <br>
       <%= f.number_field :price_rating, min: 0, max: 5, class: "form-control" %>
     </div>

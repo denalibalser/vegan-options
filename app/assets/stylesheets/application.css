@@ -24,14 +24,17 @@
   
   body {
     height: inherit;
-    background-image: linear-gradient(rgb(204,237,235), darkblue);
+    background-image: radial-gradient(rgb(204,237,235), rgb(154, 154, 197));
+    background-size: cover;
     padding-top: 0px;
     padding-bottom: 10px;
   
   }
   
   .gradient-background {
-    background-image: linear-gradient(rgb(204,237,235), darkblue);
+    background-image: radial-gradient(rgb(204,237,235), rgb(154, 154, 197));
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
     height: 100%;
     width: 100%;
   }
@@ -128,6 +131,9 @@
     position: fixed;
     width: 100%;
     z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
   }
   
   .nav a {
@@ -138,11 +144,11 @@
     padding: inherit;
     text-decoration: none;
     font-size: large;
-    border: 2px solid green;
+    border: 2px solid rgb(100, 73, 161);
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    background-color: darkblue;
+    background-color: rgb(88, 88, 146);
     border-radius: 17px;
   
   }
@@ -181,4 +187,14 @@
         font-weight: bold;
         padding-top: 70px;
         padding-bottom: 10px;
+    }
+
+    .footer {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: rgb(88, 88, 146);
+        color: white;
+        text-align: center;
     }

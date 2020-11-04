@@ -23,8 +23,9 @@ class UsersController < ApplicationController
 
     def show 
         @user = current_user
+        @restaurants = Restaurant.all
         render :layout => 'application'
-        #@restaurant = Restaurant.find_by(id: params[:id]) not working
+        
     end 
 
     private 
