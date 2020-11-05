@@ -15,7 +15,6 @@ class RestaurantsController < ApplicationController
             @restaurant.save
             redirect_to restaurant_path(@restaurant)
         else 
-            #why does browser URL direct  to '/restaurants' when errors are present?
             render 'new'
         end 
     end 
@@ -35,7 +34,7 @@ class RestaurantsController < ApplicationController
         
     end 
     
-    def update #WORKING ON THIS ONE
+    def update 
         @restaurant.update(restaurant_params)
         if @restaurant.valid?
 

@@ -38,7 +38,6 @@ class UsersController < ApplicationController
         @user.update(user_params)
 
         redirect_to user_path(current_user)
-        #render :layout => 'application'
     end 
 
     private 

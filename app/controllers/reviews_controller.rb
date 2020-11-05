@@ -1,5 +1,7 @@
 class ReviewsController < ApplicationController
     before_action :authorized
+    before_action :find_review, only: [:edit, :update, :destroy] 
+
     
     def create
         @review = Review.new(review_params)
@@ -13,12 +15,10 @@ class ReviewsController < ApplicationController
     end
 
       def edit
-        @review = Review.find_by(id: params[:id]) 
         @restaurant = Restaurant.find_by(id: params[:id])
       end 
       
       def update 
-        @review = Review.find_by(id: params[:id]) 
         if @review.valid? 
             @review.update(review_params)
 
@@ -29,7 +29,6 @@ class ReviewsController < ApplicationController
       end 
 
       def destroy 
-        @review = Review.find_by(id: params[:id])
         @review.destroy
 
         redirect_to restaurant_path(@review.restaurant) 
@@ -37,10 +36,8 @@ class ReviewsController < ApplicationController
 
       private
 
-      def get_restaurant 
-      end  
-
       def find_review
+        @review = Review.find_by(id: params[:id])
       end 
       
       def review_params
