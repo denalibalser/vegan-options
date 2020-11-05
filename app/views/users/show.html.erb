@@ -14,11 +14,14 @@
     <h3> Your Restaurant Submissions: </h3> <%# need to figure out how to have this display only if user has restaurants %>
     <% @restaurants.each do |restaurant| %>
         <% if restaurant.user_id == @user.id %> 
-        <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+            <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
         <% end %>
     <% end %>
     </ul>
 <% else %>
-        <p>You Have No Restaurant Submissions Yet</p>
+        <p>Be the First to Submit a Restaurant!</p>
 <% end %> 
 </div>
+
+
+    

@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     end 
 
     def create
+        #binding.pry
         # OAuth login/signup flow: 
         # if auth_hash = request.env["omniauth.auth"]
         #      #they logged in with OAuth
@@ -31,5 +32,11 @@ class SessionsController < ApplicationController
     def destroy 
         reset_session 
         redirect_to root_path
+    end 
+
+    private 
+
+    def auth 
+        request.env['omniauth.auth']
     end 
 end
