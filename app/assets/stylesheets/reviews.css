@@ -7,3 +7,11 @@ h3 {
     padding-top: 70px;
     padding-bottom: 0px;
 }
+
+div.user_review {
+    border-bottom: 1px solid grey;
+}
+
+div.create_review {
+    margin-top: -4%;
+}

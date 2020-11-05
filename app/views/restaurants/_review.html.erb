@@ -1,13 +1,14 @@
-<div>
+<div class="user_review">
   <h4>Posted by: <%= review.user.username %></h4>
-  <p class="review"><%= review.body %></p>
-</div>
-<p>
-  Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %>
-</p>
-<% if review.user.id == current_user.id %> 
+  <p> <%= review.body %></p>
+  <p>Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
+
+  <% if review.user.id == current_user.id %> 
   <%= link_to "Edit Your Review", edit_review_path(review) %>  
 <% end %>
+</div>
+
+
 
 
 

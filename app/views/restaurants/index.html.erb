@@ -8,6 +8,8 @@
     <% end %> 
     </ul>
 <% else %> 
+    <div class="no_restaurants">
         <h2>No Restaurant Submissions for <%=@state.name%></h2>
         <%= link_to 'Create Restaurant', new_restaurant_path %>
+    </div>
 <% end %>

@@ -3,3 +3,22 @@ form#new_review.new_review {
     padding-bottom: 40px;
 }
 
+div.restaurant {
+    box-sizing: border-box;
+    width: 100%;
+    border: solid #5B6DCD 10px;
+    padding: 5px;
+    overflow: scroll;
+    margin-top: 5%;
+    
+}
+
+div.restaurant h1 {
+    padding-top: 5px;
+}
+
+div.no_restaurants {
+    margin-top: 100px;
+    display: block;
+}
+
