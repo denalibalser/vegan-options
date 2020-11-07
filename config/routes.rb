@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get '/states' => 'states#index'
 
   #route for OAuth facebook signing:
-  get '/auth/facebook/callback' => 'sessions#create'
+  get '/auth/facebook/callback' => 'sessions#omni_create'
 
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

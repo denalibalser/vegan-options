@@ -17,15 +17,13 @@ class UsersController < ApplicationController
             redirect_to user_path(current_user) 
         else 
             render 'new'  
-        end
-        
+        end 
     end 
 
     def show 
         @user = current_user
         @restaurants = Restaurant.all
-        render :layout => 'application'
-        
+        render :layout => 'application' 
     end 
 
     def edit 
@@ -45,6 +43,4 @@ class UsersController < ApplicationController
     def user_params 
         params.require(:user).permit(:username, :first_name, :last_name, :email, :password)
     end
-
-
 end
