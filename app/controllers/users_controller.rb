@@ -36,8 +36,7 @@ class UsersController < ApplicationController
         if @user.update(user_params)
             redirect_to user_path(current_user)
         else 
-            flash[:alert] = "Invalid Update Attempt"
-            redirect_to edit_user_path(@user)
+            render 'edit'
         end 
     end 
 

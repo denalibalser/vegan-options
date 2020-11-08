@@ -20,10 +20,14 @@ class RestaurantsController < ApplicationController
     end 
 
     def show 
-        @reviews = @restaurant.reviews.all
-        @review = Review.new
-        @review.restaurant_id = @restaurant.id
-        @review.user_id = current_user.id
+        if @restaurant != nil
+            @reviews = @restaurant.reviews.all
+            @review = Review.new
+            @review.restaurant_id = @restaurant.id
+            @review.user_id = current_user.id
+        else 
+            redirect_to states_path
+        end 
     end 
 
     def index 
@@ -54,7 +58,7 @@ class RestaurantsController < ApplicationController
     private 
     
     def get_state
-         @state = State.find(params[:state_id])
+        @state = State.find(params[:state_id])
     end
 
     def find_restaurant 
