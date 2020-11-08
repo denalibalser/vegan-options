@@ -1,6 +1,8 @@
+<div class="states_index">
 <h1> States Index </h1>
 <ul>
 <% @states.each do |state| %>
     <li><%= link_to state.name, state_restaurants_path(state) %> - <%= state.restaurants.count %> Restaurants </li>
 <% end %>
 </ul>
+</div>

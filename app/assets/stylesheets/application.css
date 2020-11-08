@@ -122,8 +122,10 @@
     display: flex;
     justify-content: start;
     position: absolute;
-    margin-top: 5%;
     color: red;
+    margin-top: 0%;
+    font-size: large;
+
   }
   .nav {
     text-decoration: none;
