@@ -16,15 +16,24 @@
       </div>
     <% end %>
 
-    <div class="nav">
+    
       <% if logged_in? %>
-        <br>
-        <%= link_to  "Profile", user_path(current_user)%>
-        <%= link_to "List of States", states_path %>
-        <%= link_to "Create Restaurant", new_restaurant_path %>
-        <%= link_to "Log Out", logout_path %>
+        <div class="nav">
+          <br>
+          <%= link_to  "Profile", user_path(current_user)%>
+          <%= link_to "List of States", states_path %>
+          <%= link_to "Create Restaurant", new_restaurant_path %>
+          <%= link_to "Log Out", logout_path %>
+        </div>
+      <% elsif !logged_in? %>
+      <div class="nav">
+          <br>
+          <%= link_to "Sign Up", new_user_path %>
+          <%= link_to "Sign In", signin_path %>
+          <%= link_to "Log Out", logout_path %>
+      </div>
       <% end %>
-    </div>
+
     <%= yield %>
 
     
@@ -34,6 +43,8 @@
   <div class="footer">
       <% if logged_in? %>
         <p>Signed in as: <%= current_user.username %></p>
+      <% elsif !logged_in? %>
+        <p> Welcome! </p> 
       <% end %>
   </div>
 

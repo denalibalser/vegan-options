@@ -53,4 +53,6 @@
   
 <% end %> 
 
+<% if !logged_in? %>
 <%= link_to "Return Home", root_path %>
+<% end %>
