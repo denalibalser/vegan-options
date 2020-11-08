@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   root 'welcome#home'
-  resources :states, shallow: true do 
+  resources :states, only: [:index], shallow: true do 
     resources :restaurants, only: [:index] do #should restaurants#show & edit/update be nested as well?
       resources :reviews
     end
   end
-  resources :users, only: [:new, :create, :show, :edit, :update] #added , only: [:new, :create, :show]
-  # resources :restaurants do 
-  #   resources :reviews
-  # end 
+  resources :users, except: [:delete]
+ 
 
 
   #post 'users/new' => 'users#create'   {:action=>"create", :controller=>"things"}

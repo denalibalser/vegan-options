@@ -123,6 +123,7 @@
     justify-content: start;
     position: absolute;
     margin-top: 5%;
+    color: red;
   }
   .nav {
     text-decoration: none;
@@ -197,4 +198,9 @@
         background-color: rgb(88, 88, 146);
         color: white;
         text-align: center;
+    }
+
+    form {
+        padding-top: 70px;
+        padding-bottom: 10px;
     }

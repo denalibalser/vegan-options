@@ -12,7 +12,8 @@ class SessionsController < ApplicationController
             
             redirect_to user_path(@user)  
         else 
-            redirect_to root_path
+            flash[:alert] = "User not found."
+            redirect_to signin_path
         end 
     end
 

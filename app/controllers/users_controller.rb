@@ -16,6 +16,9 @@ class UsersController < ApplicationController
             
             session[:user_id] = @user.id
             redirect_to user_path(current_user) 
+        elsif User.find_by(username: params[:user][:username]) || User.find(email: params[:user][:email])
+            flash[:alert] = "Looks like you've already signed up!"
+            redirect_to signin_path 
         else 
             render 'new'  
         end 
@@ -30,10 +33,14 @@ class UsersController < ApplicationController
     end
 
     def update 
-        @user.update(user_params)
-
-        redirect_to user_path(current_user)
+        if @user.update(user_params)
+            redirect_to user_path(current_user)
+        else 
+            flash[:alert] = "Invalid Update Attempt"
+            redirect_to edit_user_path(@user)
+        end 
     end 
+
 
     private 
 

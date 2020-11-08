@@ -11,7 +11,7 @@
 <div class="user_restaurants">
 <% if @restaurants != nil %>
     <ul>
-    <h3> Your Restaurant Submissions: </h3> <%# need to figure out how to have this display only if user has restaurants %>
+    <h3> Your Restaurant Submissions: </h3> 
     <% @restaurants.each do |restaurant| %>
         <% if restaurant.user_id == @user.id %> 
             <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
