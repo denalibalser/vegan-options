@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
     before_action :authorized, except: [:new, :create]
+    before_action :find_user, except: [:new, :create]
     layout 'welcome'
 
     def new 
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
         @user = User.create(user_params)
        
         if @user.valid?
-            #binding.pry
+            
             @user.save
             
             session[:user_id] = @user.id
@@ -21,24 +22,25 @@ class UsersController < ApplicationController
     end 
 
     def show 
-        @user = current_user
         @restaurants = Restaurant.all
         render :layout => 'application' 
     end 
 
     def edit 
-        @user = current_user
         render :layout => 'application'
     end
 
     def update 
-        @user = current_user
         @user.update(user_params)
 
         redirect_to user_path(current_user)
     end 
 
     private 
+
+    def find_user 
+        @user = current_user
+    end 
 
     def user_params 
         params.require(:user).permit(:username, :first_name, :last_name, :email, :password)
