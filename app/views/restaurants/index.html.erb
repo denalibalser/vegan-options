@@ -1,7 +1,7 @@
 <% if @state.restaurants.any? %>
     <h1>Restaurant's in <%= @state.name %> </h1>
     <ul>
-    <% @restaurants.each do |restaurant| %>
+    <% @restaurants.sort_alphabetical.each do |restaurant| %>
         <% if restaurant.state_id == restaurant.state.id %>  
             <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li> 
         <% end %>
