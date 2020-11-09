@@ -65,4 +65,4 @@
 <% end %> 
 
     
-<p><%= link_to "Delete Restaurant", delete_restaurant_path(@restaurant) %></p>
+<p><%= link_to "Delete Restaurant", delete_restaurant_path(@restaurant), data: {:confirm => 'Are you sure?'} %></p>
