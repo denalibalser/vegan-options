@@ -1,4 +1,4 @@
-<%= form_for [@restaurant] do |f| %> 
+<%= form_for @restaurant do |f| %> 
 
     <% if @restaurant.errors.any? %>
     <div id="error_explanation">
@@ -63,10 +63,6 @@
     </div>
   
 <% end %> 
-  
-
-
-<%# render partial: 'form', locals: { restaurant: @restaurant } %>
 
     
 <p><%= link_to "Delete Restaurant", delete_restaurant_path(@restaurant) %></p>
