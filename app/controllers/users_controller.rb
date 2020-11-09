@@ -16,12 +16,14 @@ class UsersController < ApplicationController
             
             session[:user_id] = @user.id
             redirect_to user_path(current_user) 
-        elsif User.find_by(username: params[:user][:username]) || User.find(email: params[:user][:email])
-            flash[:alert] = "Looks like you've already signed up!"
-            redirect_to signin_path 
+        else
+            if User.find_by(username: params[:user][:username]) || User.find_by(email: params[:user][:email])
+                flash[:alert] = "Looks like you've already signed up!"
+                redirect_to signin_path 
         else 
             render 'new'  
-        end 
+        end
+        end  
     end 
 
     def show 

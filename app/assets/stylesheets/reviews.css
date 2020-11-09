@@ -15,3 +15,7 @@ div.user_review {
 div.create_review {
     margin-top: -4%;
 }
+
+div#error_explanation {
+    margin-top: 100px;
+}

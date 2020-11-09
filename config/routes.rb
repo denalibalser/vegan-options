@@ -6,16 +6,16 @@ Rails.application.routes.draw do
     end
   end
   resources :users, except: [:delete] do 
-    resources :restaurants, only: [:new, :create, :edit, :update]
+    resources :restaurants, only: [:new, :create] 
   end
+
+  #resources :sessions, only: [:new, :create, :destroy]
   
   #restaurant routes:
-  #get 'restaurants/new' => 'restaurants#new', as: 'new_restaurant'
-  #post 'restaurants' => 'restaurants#create'
   get 'restaurants/:id' => 'restaurants#show', as: 'restaurant'
-  #get 'restaurants/:id/edit' => 'restaurants#edit', as: 'edit_restaurant'
-  #post 'restaurants/:id' => 'restaurants#update'
-  #patch 'restaurants/:id' => 'restaurants#update'
+  get 'restaurants/:id/edit' => 'restaurants#edit', as: 'edit_restaurant'
+  post 'restaurants/:id' => 'restaurants#update'
+  patch 'restaurants/:id' => 'restaurants#update'
   get 'restaurants/:id/destroy' => 'restaurants#destroy', as: 'delete_restaurant'
   post 'restaurants/:id/destroy' => 'restaurants#destroy'
 

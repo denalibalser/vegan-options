@@ -9,6 +9,8 @@
         <li><%= message %></li>
       <% end %>
       </ul>
+
+      <%= link_to "Try Again", restaurant_path(@review.restaurant) %>
     </div>
 
-    <%= link_to "Try Again", restaurant_path(@review.restaurant) %>
+    
