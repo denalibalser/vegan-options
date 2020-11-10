@@ -8,7 +8,5 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :email, format:  { with: /\A[^@\s]+@([^@\s]+\.)+[^@\s]+\z/, message: "incorrect format, correct example: john@gmail.com" }
 
-    
-
 
 end
