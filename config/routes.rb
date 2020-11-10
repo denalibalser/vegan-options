@@ -9,11 +9,6 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:new, :create] 
   end
 
-  #Scope method URL:
-  get '/restaurants/order_by_vegan_rating' => 'restaurants#order_by_vegan_rating' 
-
-  #resources :sessions, only: [:new, :create, :destroy]
-  
   #restaurant routes:
   get 'restaurants/:id' => 'restaurants#show', as: 'restaurant'
   get 'restaurants/:id/edit' => 'restaurants#edit', as: 'edit_restaurant'
@@ -31,6 +26,9 @@ Rails.application.routes.draw do
 
   #route for OAuth facebook signing:
   get '/auth/facebook/callback' => 'sessions#omni_create'
+
+  #Scope method URL:
+  get '/restaurants/order_by_vegan_rating' => 'restaurants#order_by_vegan_rating' 
 
   
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
