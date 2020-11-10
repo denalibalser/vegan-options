@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
 
   #Scope method URL:
-  get '/restaurants/order_by_vegan_rating' => 'restaurants#order_by_vegan_rating' #maybe as: something else
+  get '/restaurants/order_by_vegan_rating' => 'restaurants#order_by_vegan_rating' 
 
   #resources :sessions, only: [:new, :create, :destroy]
   

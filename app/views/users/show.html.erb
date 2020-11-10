@@ -8,6 +8,10 @@
     <%= link_to "Edit Profile", edit_user_path(@user) %>
 </div>
 
+<div class="best_vegan_restaurants">
+<%= link_to 'Best Vegan Rated Restaurants', restaurants_order_by_vegan_rating_path %>
+</div>
+
 <div class="user_restaurants">
 <% if @restaurants != nil %>
     <ul>
