@@ -59,6 +59,11 @@ class RestaurantsController < ApplicationController
         redirect_to states_path
     end 
 
+    def order_by_vegan_rating 
+        @restaurants = Restaurant.order_by_vegan_rating
+    end 
+
+
     private 
     
     def get_state

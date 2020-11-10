@@ -5,12 +5,16 @@ class Restaurant < ApplicationRecord
   has_many :users, through: :reviews
 
   scope :sort_alphabetical, ->{order(:name)}
+  #scope :user_reviews, -> (restaurant_id, user_id) { find(restaurant_id).reviews.joins(:users).where(users: {id: user_id})}
+  # scope :good_vegan_rating, ->{where(vegan_friendliness_rating > 8) }
+  scope :order_by_vegan_rating, ->{order(:vegan_friendliness_rating).reverse }
 
 
   validates :name, :description, :vegan_friendliness_rating, :state_id, :phone_number, presence: true, allow_blank: false
   validates :phone_number, format: { with: /\d{3}-\d{3}-\d{4}/, message: "incorrect format, correct example: 234-567-8900" }
 
   #scope method for user's reviews -- using current_user.id == review.user_id 
+
 
 end
 

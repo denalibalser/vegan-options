@@ -9,6 +9,9 @@ Rails.application.routes.draw do
     resources :restaurants, only: [:new, :create] 
   end
 
+  #Scope method URL:
+  get '/restaurants/order_by_vegan_rating' => 'restaurants#order_by_vegan_rating' #maybe as: something else
+
   #resources :sessions, only: [:new, :create, :destroy]
   
   #restaurant routes:
