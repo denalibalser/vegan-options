@@ -5,7 +5,7 @@ class Restaurant < ApplicationRecord
   has_many :users, through: :reviews
 
   scope :sort_alphabetical, ->{order(:name)}
-  scope :order_by_vegan_rating, ->{order(:vegan_friendliness_rating).reverse }
+  scope :order_by_vegan_rating, ->{ order(:vegan_friendliness_rating).reverse }
 
 
   validates :name, :description, :vegan_friendliness_rating, :state_id, :phone_number, presence: true, allow_blank: false
