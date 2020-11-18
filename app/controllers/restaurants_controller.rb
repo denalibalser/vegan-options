@@ -23,8 +23,6 @@ class RestaurantsController < ApplicationController
         if @restaurant != nil
             @reviews = @restaurant.reviews.all
             @review = Review.new
-            @review.restaurant_id = @restaurant.id
-            @review.user_id = current_user.id
         else 
             flash[:alert] = "Invalid restaurant request."
             redirect_to states_path
