@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    before_action :authorized, except: [:new, :create, :omni_create]
+    before_action :authorized, only: [:destroy]
 
     def new
         if !logged_in? 
@@ -26,7 +26,7 @@ class SessionsController < ApplicationController
             @user = User.find_or_create_by(email: auth['info']['email']) do |u|
                 u.username = auth['info']['name']
                 u.first_name = auth['info']['name']
-                u.last_name = auth['info']['name']
+                u.last_name = auth['info']['name'].split(' ').last
                 u.uid = auth['uid']
                 u.provider = auth['provider']
 

@@ -15,11 +15,9 @@ class ReviewsController < ApplicationController
     end
 
       def edit
-        if @review != nil
-            @restaurant = Restaurant.find_by(id: params[:id])
-        else 
+        if @review == nil 
             flash[:alert] = "Invalid review attempt."
-             redirect_to states_path
+            redirect_to states_path
         end
       end 
       

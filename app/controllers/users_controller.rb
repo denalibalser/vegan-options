@@ -25,9 +25,9 @@ class UsersController < ApplicationController
             if User.find_by(username: params[:user][:username]) || User.find_by(email: params[:user][:email])
                 flash[:alert] = "Looks like you've already signed up!"
                 redirect_to signin_path 
-        else 
-            render 'new'  
-        end
+            else 
+                render 'new'  
+            end
         end  
     end 
 
