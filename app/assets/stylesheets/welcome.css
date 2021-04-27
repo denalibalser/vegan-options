@@ -1,18 +1,18 @@
 .center {
-    padding: 70px 10;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    width: 50%;
-    margin-left: 20px;
-    margin-top: 0%;
-  }
+  padding: 70px 10;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 50%;
+  margin-left: 20px;
+  margin-top: 0%;
+}
 
-  .limit {
-    width:450px;
-    word-wrap: break-word;
-    float: right;
-    margin-top: -28%;
-    margin-right: 175px;
-  }
+.limit {
+  width:450px;
+  word-wrap: break-word;
+  float: right;
+  margin-top: -28%;
+  margin-right: 175px;
+}
 
  
