@@ -8,6 +8,9 @@ A web-based CRUD, MVC structured Rails application that serves the purpose of pr
 ## Blog 
 [Link to Blog Post](https://denalibalser.github.io/rails_project_blog)
 
+## Video Demo
+[Link to Video Demo](https://www.youtube.com/watch?v=4To4H5mDnFY&ab_channel=DenaliBalser)
+
 Specs:
 
 [x] Using Ruby on Rails for the project
