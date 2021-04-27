@@ -43,7 +43,6 @@ class RestaurantsController < ApplicationController
     def update 
         @restaurant.update(restaurant_params)
         if @restaurant.valid?
-
             redirect_to restaurant_path(@restaurant)
         else 
             render 'edit'
@@ -61,7 +60,6 @@ class RestaurantsController < ApplicationController
         @restaurants = Restaurant.order_by_vegan_rating
     end 
 
-
     private 
     
     def get_state
@@ -75,5 +73,4 @@ class RestaurantsController < ApplicationController
     def restaurant_params
         params.require(:restaurant).permit(:name, :description, :address, :phone_number, :vegan_friendliness_rating, :price_rating, :user_id, :state_id, :search)  
     end 
-    
 end

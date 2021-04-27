@@ -2,7 +2,6 @@ class UsersController < ApplicationController
     before_action :authorized, except: [:new, :create]
     before_action :find_user, except: [:new, :create]
   
-
     def new 
         if !logged_in?
             @user = User.new 
@@ -14,11 +13,8 @@ class UsersController < ApplicationController
 
     def create 
         @user = User.create(user_params)
-       
         if @user.valid?
-            
             @user.save
-            
             session[:user_id] = @user.id
             redirect_to user_path(current_user) 
         else
