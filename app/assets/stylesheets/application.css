@@ -1,18 +1,36 @@
-html {
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ html {
   height: 100%;
   width: 100%;
   min-width: 100%;
   min-height: 100%;
+
 }
-  
+
 body {
   height: inherit;
   background-image: radial-gradient(rgb(204,237,235), rgb(154, 154, 197));
   background-size: cover;
   padding-top: 0px;
   padding-bottom: 10px;
+
 }
-  
+
 .gradient-background {
   background-image: radial-gradient(rgb(204,237,235), rgb(154, 154, 197));
   background-repeat: no-repeat, repeat;
@@ -20,7 +38,7 @@ body {
   height: 100%;
   width: 100%;
 }
-  
+
 header {
   text-align: center;
   font-family: cursive;
@@ -31,37 +49,36 @@ header {
   padding-top: 83px;
   padding-bottom: 10px;
 }
-  
+
 header#name-note {
   padding: 0px;
 }
-  
+
 .list {
   display: flex;
 }
-  
+
 .list a {
   color: darkblue;
   align-items: center;
   font-size: larger;
   text-decoration: none;
 }
-  
+
 .list a:hover {
   color: green;
 }
-
 .list a:unvisted {
   color: darkblue;
 }
-  
+
 .homepage {
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
 }
-  
+
 .homepage #center-header {
   width: 100%;
   text-align: center;
@@ -71,21 +88,21 @@ header#name-note {
   font-size: xx-large;
   width: 100%;
   -webkit-text-stroke: .5px black;
-  -webkit-text-fill-color: rgb(17 58 121);
+    -webkit-text-fill-color: rgb(17 58 121);
 }
-  
+
 .homepage #options {
   text-align: center;
   color: white;
   font-family: cursive;
   padding: 8%;
 }
-  
+
 .homepage #options a {
   text-decoration-line: none;
   color: white;
 }
-  
+
 #login-form {
   display: flex;
   flex-direction: column;
@@ -93,14 +110,14 @@ header#name-note {
   height: 25%;
   justify-content: space-around;
 }
-  
+
 #errors {
   display: flex;
   justify-content: start;
   position: absolute;
   margin-top: 10%;
 }
-  
+
 #flash {
   display: flex;
   justify-content: start;
@@ -108,8 +125,8 @@ header#name-note {
   color: red;
   margin-top: 0%;
   font-size: large;
-}
 
+}
 .nav {
   text-decoration: none;
   display: flex;
@@ -121,7 +138,7 @@ header#name-note {
   left: 0;
   right: 0;
 }
-  
+
 .nav a {
   align-content: center;
   color: white;
@@ -136,16 +153,18 @@ header#name-note {
   width: 100%;
   background-color: rgb(88, 88, 146);
   border-radius: 17px;
+
 }
-  
+
 .link {
   color: white;
   text-decoration: none;
   font-size: large;
   display: flex;
   justify-content: space-evenly;
-}
   
+}
+
 .link a {
   color: white;
   align-items: center;
@@ -153,39 +172,39 @@ header#name-note {
   text-decoration: none;
   padding-right: 10px;
 }
-  
+
 .link a:hover {
   color: darkblue;
 }
-
 .link a:unvisted {
   color: white;
 }
 
-h1 {
-  display: block;
-  font-size: 2em;
-  margin-block-start: 0.67em;
-  margin-block-end: 0.67em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
-  font-weight: bold;
-  padding-top: 70px;
-  padding-bottom: 10px;
-}
+  h1 {
+      display: block;
+      font-size: 2em;
+      margin-block-start: 0.67em;
+      margin-block-end: 0.67em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+      font-weight: bold;
+      padding-top: 70px;
+      padding-bottom: 10px;
+  }
 
-.footer {
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(88, 88, 146);
-  color: white;
-  text-align: center;
-}
+  .footer {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      background-color: rgb(88, 88, 146);
+      color: white;
+      text-align: center;
+  }
 
-form {
-  padding-top: 70px;
-  padding-bottom: 10px;
-}
+  form {
+      padding-top: 70px;
+      padding-bottom: 10px;
+  }
+
