@@ -10,7 +10,6 @@ div.restaurant {
     padding: 5px;
     overflow: scroll;
     margin-top: 5%;
-    
 }
 
 div.restaurant h1 {
@@ -25,4 +24,3 @@ div.no_restaurants {
 div.vegan_rating_index {
     margin-top: 8%;
 }
-
