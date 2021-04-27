@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_03_172742) do
+ActiveRecord::Schema.define(version: 2020_11_03_165438) do
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
@@ -47,12 +47,12 @@ ActiveRecord::Schema.define(version: 2020_11_03_172742) do
     t.string "username"
     t.string "first_name"
     t.string "last_name"
+    t.string "email"
     t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "provider"
     t.string "uid"
-    t.string "email"
     t.index ["provider"], name: "index_users_on_provider"
     t.index ["uid"], name: "index_users_on_uid"
   end

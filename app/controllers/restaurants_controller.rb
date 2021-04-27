@@ -11,7 +11,6 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.new(restaurant_params)
         @restaurant.user_id = current_user.id
         if @restaurant.valid? 
-
             @restaurant.save
             redirect_to restaurant_path(@restaurant)
         else 
@@ -49,7 +48,6 @@ class RestaurantsController < ApplicationController
         end
     end 
     
-
     def destroy 
         @restaurant.destroy
 
