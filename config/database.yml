@@ -1,5 +1,4 @@
 default: &default
-  # adapter: sqlite3
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -7,12 +6,16 @@ default: &default
 
 development:
   <<: *default
-  database: db/development.postgresql
+  database: <%= ENV['YOUR_DATABASE'] %>
+  user: <%= ENV['YOUR_DATABASE_USERNAME'] %>  
+  password: <%= ENV['YOUR_DATABASE_PASSWORD'] %> 
 
 test:
   <<: *default
-  database: db/test.postgresql
+  database: my_database_test
 
 production:
   <<: *default
-  database: db/production.postgresql
+  database: <%= ENV['YOUR_DATABASE'] %>
+  user: <%= ENV['YOUR_DATABASE_USERNAME'] %> 
+  password: <%= ENV['YOUR_DATABASE_PASSWORD'] %> 
