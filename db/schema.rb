@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2020_11_03_165438) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -19,8 +22,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_165438) do
     t.string "phone_number"
     t.integer "vegan_friendliness_rating"
     t.integer "price_rating"
-    t.integer "user_id", null: false
-    t.integer "state_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "state_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["state_id"], name: "index_restaurants_on_state_id"
@@ -29,8 +32,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_165438) do
 
   create_table "reviews", force: :cascade do |t|
     t.text "body"
-    t.integer "user_id", null: false
-    t.integer "restaurant_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "restaurant_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["restaurant_id"], name: "index_reviews_on_restaurant_id"
