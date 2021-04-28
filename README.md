@@ -23,7 +23,7 @@ This app has been deployed through the Heroku Cloud Platform. To view this app i
 * "turbolinks": "^5.2.0"
 
 ## Contribution
-Bug reports and pull requests are welcome on GitHub at https://github.com/'denalibalser'/stress_release_yoga. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/'denalibalser'/vegan-options. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
 
 ## Version 
 
