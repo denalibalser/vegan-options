@@ -17,7 +17,7 @@ gem 'dotenv-rails'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'
 
-gem 'pg', '13.2'
+gem 'pg'
 
 gem 'puma', '~> 4.1'
 
