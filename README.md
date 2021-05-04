@@ -22,7 +22,14 @@ This app has been deployed through the Heroku Cloud Platform. To view this app i
 * "@rails/webpacker": "4.3.0",
 * "turbolinks": "^5.2.0"
 
+## Contributing
+Bug reports and pull requests are welcome on GitHub at https://github.com/'denalibalser'/vegan-options. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the Contributor Covenant code of conduct.
+
 ## Version 
 
 "version": "0.1.0"
+
+## Code of Conduct
+
+Everyone interacting in the StressReleaseYoga project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/'denalibalser'/stress_release_yoga/blob/master/CODE_OF_CONDUCT.md).
 
