@@ -13,6 +13,8 @@ gem 'omniauth'
 
 gem 'omniauth-facebook'
 
+gem 'omniauth-rails_csrf_protection'
+
 gem 'dotenv-rails'
 
 gem 'rails', '~> 6.0.3', '>= 6.0.3.2'

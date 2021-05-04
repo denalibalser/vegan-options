@@ -149,6 +149,9 @@ GEM
     omniauth-oauth2 (1.7.1)
       oauth2 (~> 1.4)
       omniauth (>= 1.9, < 3)
+    omniauth-rails_csrf_protection (1.0.0)
+      actionpack (>= 4.2)
+      omniauth (~> 2.0)
     pg (1.2.3)
     pg (1.2.3-x64-mingw32)
     pg (1.2.3-x86-mingw32)
@@ -274,6 +277,7 @@ DEPENDENCIES
   listen (~> 3.2)
   omniauth
   omniauth-facebook
+  omniauth-rails_csrf_protection
   pg
   pry
   puma (~> 4.1)

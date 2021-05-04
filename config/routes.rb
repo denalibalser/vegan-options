@@ -26,7 +26,7 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   post '/logout' => 'sessions#destroy'
 
-  #route for OAuth facebook signing:
+  #route for OAuth facebook signin:
   get '/auth/facebook/callback' => 'sessions#omni_create'
 
 end
