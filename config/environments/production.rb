@@ -8,7 +8,7 @@ Rails.application.configure do
 
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
-  config.secret_key_base = 'YourSecretKeyHere' #added this
+  config.secret_key_base = 'YourSecretKeyHere' 
 
   config.assets.compile = false
 
