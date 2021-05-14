@@ -46,8 +46,8 @@
     <%= f.label :state_id, "In which state is this restaurant located?" %>  
     <br>
     <%= f.collection_select(:state_id, State.all, :id, :name) %>
-    <br>
   </div>
+  <br>
   <div class="actions">
     <br>
     <%= f.submit 'Submit Restaurant', class: "btn btn-primary" %>
