@@ -2,10 +2,9 @@
   <h4>Posted by: <%= review.user.username %></h4>
   <p> <%= review.body %></p>
   <p>Created: <%= review.created_at.strftime("%B %d %Y, %l:%M%P") %></p>
-
   <% if review.user.id == current_user.id %> 
-  <%= link_to "Edit Your Review", edit_review_path(review) %>  
-<% end %>
+    <%= link_to "Edit Your Review", edit_review_path(review) %>  
+  <% end %>
 </div>
 
 

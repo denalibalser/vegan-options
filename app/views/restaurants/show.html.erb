@@ -7,18 +7,15 @@
     <p><strong>Vegan Friendliness Rating:</strong> <%= @restaurant.vegan_friendliness_rating %></p>
     <p><strong>Price Rating:</strong> <%= @restaurant.price_rating %></p>
 </div>
-
 <div class="edit_restaurant">
     <% if @restaurant.user_id == current_user.id %> 
         <p><%= link_to "Edit Restaurant", edit_restaurant_path(@restaurant) %></p>
     <% end %>
 </div>
- 
 <div class="restaurant_reviews">
     <h3>Reviews (<%= @restaurant.reviews.size %>):</h3> 
     <%= render partial: 'restaurants/review', collection: @restaurant.reviews.reverse %>
 </div>
-
 <div class="create_review">
     <%= render partial: 'reviews/form', locals: { review: @review } %>
 </div>  

@@ -1,34 +1,19 @@
 <% if @review.errors.any? %>
-    
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:
-      </h2>
-
-      <ul>
+  <div id="error_explanation">
+    <h2> <%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved: </h2>
+    <ul>
       <% @review.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
-      </ul>
-
-      <%= link_to "Try Again", restaurant_path(@review.restaurant) %>
-    </div>
-
+    </ul>
+    <%= link_to "Try Again", restaurant_path(@review.restaurant) %>
+  </div>
 <% else %> 
-
-    <h3>Post a Review, <%= current_user.username %>:</h3>
-
-    <%= form_for [ @restaurant, review ] do |f| %>
-
-        <p>
-            <%= f.text_area :body %>
-        </p>
-
-        <%= f.hidden_field :user_id, :value => current_user.id %>
-        <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
-
-        <p>
-            <%= f.submit 'Submit' %>
-        </p>
-    <% end %>
+  <h3>Post a Review, <%= current_user.username %>:</h3>
+  <%= form_for [ @restaurant, review ] do |f| %>
+    <p> <%= f.text_area :body %> </p>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.hidden_field :restaurant_id, :value => @restaurant.id %>
+    <p> <%= f.submit 'Submit' %> </p>
+  <% end %>
 <% end %>

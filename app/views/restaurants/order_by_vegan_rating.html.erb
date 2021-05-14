@@ -1,8 +1,8 @@
 <div class='vegan_rating_index'>
-<h2>List of Restaurants by Best Vegan Rating</h2>
-<ol>
-<% @restaurants.each do |restaurant| %>
-    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
-<% end %>
-</ol>
+    <h2>List of Restaurants by Best Vegan Rating</h2>
+    <ol>
+        <% @restaurants.each do |restaurant| %>
+            <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+        <% end %>
+    </ol>
 </div>

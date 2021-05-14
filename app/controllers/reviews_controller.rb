@@ -6,7 +6,6 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     if @review.valid? 
       @review.save
-      
       redirect_to restaurant_path(@review.restaurant)
     else 
       render '_form'
@@ -23,7 +22,6 @@ class ReviewsController < ApplicationController
   def update 
     if @review.valid? 
       @review.update(review_params)
-
       redirect_to restaurant_path(@review.restaurant)
     else 
       render 'edit'
@@ -32,7 +30,6 @@ class ReviewsController < ApplicationController
 
   def destroy 
     @review.destroy
-
     redirect_to restaurant_path(@review.restaurant) 
   end 
 

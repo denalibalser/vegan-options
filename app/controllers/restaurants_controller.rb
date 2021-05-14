@@ -50,7 +50,6 @@ class RestaurantsController < ApplicationController
     
     def destroy 
         @restaurant.destroy
-
         redirect_to states_path
     end 
 

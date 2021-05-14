@@ -1,68 +1,56 @@
 <%= form_for @restaurant do |f| %> 
-
-    <% if @restaurant.errors.any? %>
+  <% if @restaurant.errors.any? %>
     <div id="error_explanation">
       <h2>
         <%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:
       </h2>
-
       <ul>
-      <% @restaurant.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @restaurant.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
-
-    <div class="form-group">
-      <%= f.label :name, "Name:" %>
-      <br>
-      <%= f.text_field :name, class: "form-control" %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :description, "Description:" %>
-      <br>
-      <%= f.text_field :description, class: "form-control" %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :address, "Address:" %>
-      <br>
-      <%= f.text_field :address, class: "form-control" %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :phone_number, "Phone Number:" %>
-      <br>
-      <%= f.text_field :phone_number, class: "form-control" %>
-    </div>
-  
-    <div class="form-group">
-      <%= f.label :vegan_friendliness_rating, "Vegan Friendliness Rating (Choose a number 1-10, with 1 being limited options and 10 being a full plant-based menu):" %>
-      <br>
-      <%= f.number_field :vegan_friendliness_rating, min: 0, max:10, class: "form-control" %>
-    </div>
-
-
-    <div class="form-group">
-      <%= f.label :price_rating, "Price Rating (Choose a number 1-5, with 1 being least expensive and 5 being most):" %>
-      <br>
-      <%= f.number_field :price_rating, min: 0, max: 5, class: "form-control" %>
-    </div>
-
+  <div class="form-group">
+    <%= f.label :name, "Name:" %>
     <br>
-      <%= f.label :state_id, "In which state is this restaurant located?" %>  <%# want default value of drop-down menu to be blank, ie not the name of the first state %>
-      <br>
-      <%= f.collection_select(:state_id, State.all, :id, :name) %>
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :description, "Description:" %>
     <br>
-  
-    <div class="actions">
-      <br/>
-      <%= f.submit 'Submit Restaurant', class: "btn btn-primary" %>
-    </div>
-  
+    <%= f.text_field :description, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :address, "Address:" %>
+    <br>
+    <%= f.text_field :address, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone_number, "Phone Number:" %>
+    <br>
+    <%= f.text_field :phone_number, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :vegan_friendliness_rating, "Vegan Friendliness Rating (Choose a number 1-10, with 1 being limited options and 10 being a full plant-based menu):" %>
+    <br>
+    <%= f.number_field :vegan_friendliness_rating, min: 0, max:10, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :price_rating, "Price Rating (Choose a number 1-5, with 1 being least expensive and 5 being most):" %>
+    <br>
+    <%= f.number_field :price_rating, min: 0, max: 5, class: "form-control" %>
+  </div>
+  <br>
+  <div class="form-group">
+    <%= f.label :state_id, "In which state is this restaurant located?" %>  
+    <br>
+    <%= f.collection_select(:state_id, State.all, :id, :name) %>
+    <br>
+  </div>
+  <div class="actions">
+    <br>
+    <%= f.submit 'Submit Restaurant', class: "btn btn-primary" %>
+  </div>
 <% end %> 
-
-    
 <p><%= link_to "Delete Restaurant", delete_restaurant_path(@restaurant), data: {:confirm => 'Are you sure?'} %></p>

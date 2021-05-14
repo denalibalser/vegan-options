@@ -32,7 +32,6 @@ class UsersController < ApplicationController
     end 
 
     def edit 
-  
     end
 
     def update 
@@ -44,7 +43,7 @@ class UsersController < ApplicationController
     end 
 
     private 
-
+    
     def find_user 
         @user = current_user
     end 
