@@ -11,13 +11,13 @@
 </div>
 <div class="user_restaurants">
     <% if @restaurants != nil %>
-        <ul>
-        <h3> Your Restaurant Submissions: </h3> 
-        <% @restaurants.sort_alphabetical.each do |restaurant| %>
-            <% if restaurant.user_id == @user.id %> 
-                <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+        <ul style="list-style-type:none">
+            <h3> Your Restaurant Submissions: </h3> 
+            <% @restaurants.sort_alphabetical.each do |restaurant| %>
+                <% if restaurant.user_id == @user.id %> 
+                    <li><%= link_to restaurant.name, restaurant_path(restaurant) %></li>
+                <% end %>
             <% end %>
-        <% end %>
         </ul>
     <% else %>
         <h3>Be the First to Submit a Restaurant!</h3>
